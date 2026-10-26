@@ -55,10 +55,12 @@ class DestinationCard extends StatelessWidget {
                 errorBuilder: (context, error, stackTrace) => Container(
                   height: 120,
                   color: const Color(0xFFF0F4F1),
-                  child: Icon(
-                    Icons.image_not_supported_outlined,
-                    color: Colors.grey.shade400,
-                    size: 32,
+                  child: Center(
+                    child: Icon(
+                      Icons.image_not_supported_outlined,
+                      color: Colors.grey.shade400,
+                      size: 32,
+                    ),
                   ),
                 ),
               ),
@@ -81,8 +83,11 @@ class DestinationCard extends StatelessWidget {
                   const SizedBox(height: 4),
                   Row(
                     children: [
-                      const Icon(Icons.location_on_outlined,
-                          size: 14, color: Colors.grey),
+                      const Icon(
+                        Icons.location_on_outlined,
+                        size: 14,
+                        color: Colors.grey,
+                      ),
                       const SizedBox(width: 2),
                       Expanded(
                         child: Text(
@@ -90,11 +95,16 @@ class DestinationCard extends StatelessWidget {
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                           style: const TextStyle(
-                              fontSize: 12, color: Colors.grey),
+                            fontSize: 12,
+                            color: Colors.grey,
+                          ),
                         ),
                       ),
-                      const Icon(Icons.star_rounded,
-                          size: 16, color: Colors.amber),
+                      const Icon(
+                        Icons.star_rounded,
+                        size: 16,
+                        color: Colors.amber,
+                      ),
                       const SizedBox(width: 2),
                       Text(
                         '$rating',

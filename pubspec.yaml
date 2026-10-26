@@ -35,6 +35,8 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
   youtube_player_flutter: ^9.1.1
+  ionicons:
+  flutter_native_splash: ^2.4.8
 
 dev_dependencies:
   flutter_test:
@@ -74,12 +76,11 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
+  fonts:
+     - family: Hind
+       fonts:
+         - asset: assets/fonts/hind.ttf
+
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf
@@ -88,3 +89,21 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+
+
+
+flutter_native_splash:
+  android: true
+  ios: true
+
+  color: "#FFFFFF"
+  image: assets/logo/logo.png
+
+  color_dark: "#000000"
+  image_dark: assets/logo/logo.png
+
+  android_12:
+    color: "#FFFFFF"
+    color_dark: "#000000"
+    image: assets/logo/logo.png
+    image_dark: assets/logo/logo.png

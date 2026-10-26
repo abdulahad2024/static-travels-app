@@ -16,7 +16,7 @@ class CardPopularExploreGrid extends StatelessWidget {
         padding: EdgeInsets.symmetric(vertical: 20),
         child: Center(
           child: Text(
-            'No destinations found',
+            'কোন গন্তব্য খুঁজে পাওয়া যায়নি',
             style: TextStyle(color: Colors.grey),
           ),
         ),
@@ -24,7 +24,7 @@ class CardPopularExploreGrid extends StatelessWidget {
     }
     return GridView.builder(
       shrinkWrap: true,
-      physics: const AlwaysScrollableScrollPhysics(),
+      physics: const BouncingScrollPhysics(),
       itemCount: cards.length,
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,

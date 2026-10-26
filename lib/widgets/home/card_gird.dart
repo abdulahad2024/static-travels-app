@@ -12,6 +12,11 @@ class CardGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    final visibleCards = cards.take(2).toList();
+
+
+
     if (cards.isEmpty) {
       return const Padding(
         padding: EdgeInsets.symmetric(vertical: 20),
@@ -26,7 +31,7 @@ class CardGrid extends StatelessWidget {
     return GridView.builder(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
-      itemCount: 2,
+      itemCount: visibleCards.length,
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
         crossAxisSpacing: 12,

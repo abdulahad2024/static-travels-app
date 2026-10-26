@@ -4,7 +4,8 @@ import 'package:static_travels_app/model/explore_travels_model.dart';
 import 'package:static_travels_app/model/popular_travels_models.dart';
 
 class TravelFilterService {
-  // Popular list filter
+
+
   static List<PopularTravelsModels> filterPopular({
     required String categoryId,
     required String searchQuery,

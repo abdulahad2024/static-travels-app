@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:static_travels_app/data/categori_data.dart';
 import 'package:static_travels_app/model/category_model.dart';
 import 'package:static_travels_app/model/popular_travels_models.dart';
+import 'package:static_travels_app/screen/details/travel_details_screen.dart';
 import 'package:static_travels_app/services/travel_filter_service.dart';
 import 'package:static_travels_app/widgets/home/card_popular_explore_grid.dart';
 import 'package:static_travels_app/widgets/home/destination_card.dart';
@@ -37,9 +38,40 @@ class _ExploreTravelsScreenState extends State<ExploreTravelsScreen> {
       );
 
 
+
+  void _openDetails({
+    required String imageUrl,
+    required String title,
+    required String location,
+    required double rating,
+    required String details,
+    required String videoUrl,
+    required String duration,
+    required String price,
+  }) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (_) => TravelDetailsScreen(
+          imageUrl: imageUrl,
+          title: title,
+          location: location,
+          rating: rating,
+          details: details,
+          videoUrl: videoUrl,
+          duration: duration,
+          price: price,
+        ),
+      ),
+    );
+  }
+
+
+
+
+
   @override
   Widget build(BuildContext context) {
-
 
 
 
@@ -49,6 +81,16 @@ class _ExploreTravelsScreenState extends State<ExploreTravelsScreen> {
       title: item.title,
       location: item.location,
       rating: item.rating,
+      onTap: () => _openDetails(
+        imageUrl: item.imageUrl,
+        title: item.title,
+        location: item.location,
+        rating: item.rating,
+        details: item.details,
+        videoUrl: item.videoUrl,
+        duration: item.duration,
+        price: item.price,
+      ),
     ))
         .toList();
 
@@ -58,18 +100,27 @@ class _ExploreTravelsScreenState extends State<ExploreTravelsScreen> {
       title: item.title,
       location: item.category,
       rating: item.rating,
+      onTap: () => _openDetails(
+        imageUrl: item.imageUrl,
+        title: item.title,
+        location: item.category,
+        rating: item.rating,
+        details: item.details,
+        videoUrl: item.videoUrl,
+        duration: item.duration,
+        price: item.price,
+      ),
     ))
         .toList();
 
 
     return  Scaffold(
+
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.white),
-        backgroundColor: Colors.green.shade900,
+        backgroundColor: const Color(0xFFF9FBF9),
         elevation: 0,
         scrolledUnderElevation: 0,
-
-        title: Text('ভ্রমণ করুন', style: TextStyle(color: Colors.white)),
+        title: Text('ভ্রমণ অনুসন্ধান করুন', style: TextStyle(color: Colors.black)),
       ),
 
       body: SingleChildScrollView(

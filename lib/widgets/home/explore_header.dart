@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:static_travels_app/screen/explore_travels/explore_travels_screen.dart';
 
 class ExploreHeader extends StatelessWidget {
   const ExploreHeader({
@@ -9,8 +10,8 @@ class ExploreHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: const [
-        Text(
+      children: [
+        const Text(
           'আরও অনুসন্ধান করুন',
           style: TextStyle(
             fontSize: 18,
@@ -18,11 +19,21 @@ class ExploreHeader extends StatelessWidget {
             color: Color(0xFF1C2D27),
           ),
         ),
-        Text(
-          'সব দেখুন',
-          style: TextStyle(
-            color: Color(0xFF2E7D32),
-            fontWeight: FontWeight.bold,
+        InkWell(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const ExploreTravelsScreen(),
+              ),
+            );
+          },
+          child: const Text(
+            'সব দেখুন',
+            style: TextStyle(
+              color: Color(0xFF2E7D32),
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
       ],

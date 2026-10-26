@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:static_travels_app/screen/explore_travels/explore_travels_screen.dart';
+import 'package:static_travels_app/screen/popular_travels/popular_travels_screen.dart';
 
 class PopularRowHeader extends StatelessWidget {
   const PopularRowHeader({
@@ -21,12 +22,15 @@ class PopularRowHeader extends StatelessWidget {
         ),
         InkWell(
           onTap: () {
+
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const ExploreTravelsScreen(),
+                builder: (context) => const PopularTravels(),
               ),
             );
+
+
           },
           child: const Text(
             'সব দেখুন',

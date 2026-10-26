@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:ionicons/ionicons.dart';
 import 'package:static_travels_app/data/categori_data.dart';
-import 'package:static_travels_app/details/travel_details_screen.dart';
 import 'package:static_travels_app/model/category_model.dart';
 import 'package:static_travels_app/model/explore_travels_model.dart';
 import 'package:static_travels_app/model/popular_travels_models.dart';
@@ -10,6 +10,9 @@ import 'package:static_travels_app/widgets/home/destination_card.dart';
 import 'package:static_travels_app/widgets/home/explore_header.dart';
 import 'package:static_travels_app/widgets/home/header_text.dart';
 import 'package:static_travels_app/widgets/home/popular_row_header.dart';
+import 'package:static_travels_app/widgets/home/simple_appbar.dart';
+
+import '../details/travel_details_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -119,46 +122,7 @@ class _HomeScreenState extends State<HomeScreen> {
         toolbarHeight: 70,
         automaticallyImplyLeading: false,
         titleSpacing: 20,
-        title: Row(
-          children: [
-            Container(
-              padding: const EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                color: const Color(0xFFE8F5E9),
-                borderRadius: BorderRadius.circular(14),
-              ),
-              child: const Icon(
-                Icons.location_on_outlined,
-                color: Color(0xFF2E7D32),
-                size: 24,
-              ),
-            ),
-            const SizedBox(width: 12),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                Text(
-                  'গন্তব্য খুঁজুন',
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: Colors.grey,
-                    fontWeight: FontWeight.normal,
-                  ),
-                ),
-                SizedBox(height: 2),
-                Text(
-                  'বাংলাদেশ ঘুরে দেখুন',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xFF1C2D27),
-                  ),
-                ),
-              ],
-            ),
-          ],
-        ),
+        title: SimpleAppBar(),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 20.0),
@@ -169,7 +133,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 borderRadius: BorderRadius.circular(14),
               ),
               child: const Icon(
-                Icons.notifications_none_rounded,
+                Ionicons.notifications,
                 color: Colors.black87,
                 size: 22,
               ),
@@ -188,21 +152,21 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(height: 20),
 
 
-              // Search Bar Section
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 decoration: BoxDecoration(
                   color: const Color(0xFFF0F4F1),
                   borderRadius: BorderRadius.circular(25),
                 ),
-                child: TextField(
+                child: TextFormField(
                   onChanged: (value) {
                     setState(() {
                       searchQuery = value;
                     });
                   },
                   decoration: InputDecoration(
-                    hintText: 'Search destinations...',
+                    contentPadding: EdgeInsets.symmetric(vertical: 18),
+                    hintText: 'ভ্রমণ অনুসন্ধান করুন',
                     hintStyle: TextStyle(color: Colors.grey.shade500),
                     border: InputBorder.none,
                     icon: Icon(Icons.search, color: Colors.grey.shade500),
